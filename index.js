@@ -144,6 +144,7 @@ function log(print, ctx, start, length_, err, event) {
 function time(start) {
   const delta = Date.now() - start;
   return humanize(
-    delta < 10000 ? delta + 'ms' : Math.round(delta / 1000) + 's'
+    delta < 10000 ? delta + 'ms' : Math.round(delta / 1000) + 's',
+    { delimiter: '' }
   );
 }
