@@ -137,14 +137,9 @@ function log(print, ctx, start, length_, err, event) {
 }
 
 /**
- * Show the response time in a human readable format.
- * In milliseconds if less than 10 seconds,
- * in seconds otherwise.
+ * Show the response time in ms
  */
 function time(start) {
   const delta = Date.now() - start;
-  return humanize(
-    delta < 10000 ? delta + 'ms' : Math.round(delta / 1000) + 's',
-    { delimiter: '' }
-  );
+  return delta + 'ms';
 }
